@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: radial-gradient(circle at top, #0b1d2a, #000);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+h1 {
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+.field {
+  position: relative;
+  width: 500px;
+  height: 300px;
+}
+
+.flower {
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  height: 200px;
+  transform-origin: bottom center;
+}
+
+/* Different positions */
+.f1 { left: 40px;  animation: wind 6s ease-in-out infinite; }
+.f2 { left: 160px; animation: wind 7s ease-in-out infinite; }
+.f3 { left: 280px; animation: wind 5.5s ease-in-out infinite; }
+.f4 { left: 400px; animation: wind 6.5s ease-in-out infinite; }
+
+/* Stem */
+.stem {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 6px;
+  height: 150px;
+  background: linear-gradient(to top, #1e8449, #2ecc71);
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+
+/* Bloom */
+.bloom {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background: #7fffd4;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow:
+    -25px 0 #7fffd4,
+     25px 0 #7fffd4,
+     0 -25px #7fffd4;
+}
+
+/* 🌬️ Natural Wind Animation */
+@keyframes wind {
+  0%   { transform: rotate(0deg) translateY(0px); }
+  20%  { transform: rotate(3deg) translateY(-2px); }
+  40%  { transform: rotate(-2deg) translateY(1px); }
+  60%  { transform: rotate(4deg) translateY(-3px); }
+  80%  { transform: rotate(-3deg) translateY(2px); }
+  100% { transform: rotate(0deg) translateY(0px); }
+}
